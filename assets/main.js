@@ -1,10 +1,14 @@
+// you can change these
+const quotes = [
+  "Some quote",
+  "Another quote",
+  "Yep a third one",
+  "Ok last one",
+];
+
 function getRandomEntry(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
 }
 
-fetch("./quotes.json")
-  .then((response) => response.json())
-  .then((quotes) => {
-    document.getElementById("quote").textContent = getRandomEntry(quotes);
-  });
+document.getElementById("quote").textContent = getRandomEntry(quotes);
