@@ -623,6 +623,10 @@ video {
   margin-bottom: -0.5rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -926,6 +930,18 @@ video {
 
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.bg-\[url\(assets\/images\/button-foreground\.svg\)\] {
+  background-image: url(assets/images/button-foreground.svg);
+}
+
+.bg-\[url\(\.\.\/\/images\/button-foreground\.svg\)\] {
+  background-image: url(..//images/button-foreground.svg);
+}
+
+.bg-\[url\(\.\.\/images\/button-foreground\.svg\)\] {
+  background-image: url(../images/button-foreground.svg);
 }
 
 .from-transparent {
@@ -1460,6 +1476,11 @@ body {
   background-image: url(/assets/images/corner.svg);
 }
 
+.before\:bg-\[url\(assets\/images\/corner\.svg\)\]::before {
+  content: var(--tw-content);
+  background-image: url(assets/images/corner.svg);
+}
+
 .before\:bg-cover::before {
   content: var(--tw-content);
   background-size: cover;
@@ -1500,6 +1521,11 @@ body {
 .after\:bg-\[url\(\/assets\/images\/corner\.svg\)\]::after {
   content: var(--tw-content);
   background-image: url(/assets/images/corner.svg);
+}
+
+.after\:bg-\[url\(assets\/images\/corner\.svg\)\]::after {
+  content: var(--tw-content);
+  background-image: url(assets/images/corner.svg);
 }
 
 .after\:bg-cover::after {
