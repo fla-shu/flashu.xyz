@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Site colors */
+:root {
+  --bg-1: #333a3e;
+  --bg-2: #1c2226;
+  --primary: #c6fbff;
+  --secondary: #899a9f;
+  --btn-txt: #be6800;
+}
+
+@font-face {
+  font-weight: 400;
+  src: url("../fonts/SquadLatin-Regular.otf") format("opentype");
+  font-family: SquadLatin;
+}
+
+@font-face {
+  font-weight: 900;
+  src: url("../fonts/SquadLatin-Black.otf") format("opentype");
+  font-family: SquadLatin;
+}
+
+body {
+  @apply bg-[var(--bg-1)] text-[var(--secondary)] font-[SquadLatin] tracking-wider;
+}
