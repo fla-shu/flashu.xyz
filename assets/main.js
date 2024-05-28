@@ -3,7 +3,7 @@ function getRandomEntry(array) {
   return array[randomIndex];
 }
 
-fetch("quotes.json")
+fetch("/quotes.json")
   .then((response) => response.json())
   .then((quotes) => {
     document.getElementById("quote").textContent = getRandomEntry(quotes);
