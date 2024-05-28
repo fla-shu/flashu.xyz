@@ -3,7 +3,7 @@ const quotes = [
   "Some quote",
   "Another quote",
   "Yep a third one",
-  "Ok last one",
+  "Thanks ,please like share video and follow support me 🥰🥰🥰",
 ];
 
 function getRandomEntry(array) {
