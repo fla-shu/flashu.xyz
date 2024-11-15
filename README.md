@@ -1,1 +1,1 @@
-Am 90 65 și c'est ne problem des razboi. Nu sunt țigan sau dela. Cetățean consătean de onoare al megalosolipului Babana. Urăsc megalodonii și papagalii de nisip. Iubsk ########## si melcii sălbatici vietnamezi. Nu am fumat niciodată cogaină daia. Nu droghez și ## #### p### ## nară. Ascult Dani Moca## ## cel ##### 3 ori pe #### ###### ######## austrieci și ii respect peste maxim. Un zi bun âmi doresc!
+But if we’re being realistic, the FNF devs would probably choose a mod that resembles the Newgrounds spirit. From a mod like 7Quid, [...]
