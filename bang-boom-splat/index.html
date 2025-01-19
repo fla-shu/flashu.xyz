@@ -28,6 +28,7 @@
             align-items: center;
             position: relative;
             transform-origin: center center; /* Scale from the center */
+            outline: none; /* Ensure it can be focused */
         }
 
         @media (max-width: 1170px) {
@@ -61,7 +62,7 @@
     </style>
 </head>
 <body>
-    <div id="game-container"></div>
+    <div id="game-container" tabindex="0"></div> <!-- Added tabindex for focusing -->
     <button id="reload-button">R</button>
 
     <script>
@@ -76,11 +77,31 @@
             // Replace the URL with the path to your SWF file
             player.load("swf/Bang, Boom, Splat!.swf");
 
-            // Simulate the "R" keypress when the button is clicked
+            // Focus the game container to ensure it receives key events
+            gameContainer.focus();
+
+            // Listen for the "R" key press event
+            window.addEventListener("keydown", (event) => {
+                if (event.key === "r" || event.key === "R") {
+                    // Dispatch key event to the SWF player
+                    const keyboardEvent = new KeyboardEvent("keydown", {
+                        key: "r",
+                        code: "KeyR",
+                        keyCode: 82,
+                        which: 82,
+                        bubbles: true,
+                        cancelable: true
+                    });
+
+                    gameContainer.dispatchEvent(keyboardEvent);
+                }
+            });
+
+            // Optional: Button to simulate the "R" key press when clicked
             const reloadButton = document.getElementById("reload-button");
             reloadButton.addEventListener("click", () => {
-                // Create and dispatch the "R" keypress event to the player
-                const event = new KeyboardEvent("keydown", {
+                // Trigger the "R" key event manually when the button is clicked
+                const keyboardEvent = new KeyboardEvent("keydown", {
                     key: "r",
                     code: "KeyR",
                     keyCode: 82,
@@ -89,7 +110,7 @@
                     cancelable: true
                 });
 
-                player.dispatchEvent(event);
+                gameContainer.dispatchEvent(keyboardEvent);
             });
         });
     </script>
