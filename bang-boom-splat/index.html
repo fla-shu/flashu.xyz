@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bang boom splat</title></title>
+    <title>Bang, Boom, Splat!</title>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         html, body {
@@ -30,26 +30,10 @@
             transform-origin: center center; /* Scale from the center */
             outline: none; /* Ensure it can be focused */
         }
-
-        #reload-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: white;
-            background-color: #333;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #reload-button:active {
-            background-color: #555;
-        }
     </style>
 </head>
 <body>
-    <div id="game-container" tabindex="0"></div>
-    <button id="reload-button">R</button>
+    <div id="game-container" tabindex="0"></div> <!-- Removed button -->
 
     <script>
         window.RufflePlayer = window.RufflePlayer || {};
@@ -81,22 +65,6 @@
                     // Try to dispatch to the document
                     document.dispatchEvent(keyboardEvent);
                 }
-            });
-
-            // When button is clicked, simulate the key press
-            const reloadButton = document.getElementById("reload-button");
-            reloadButton.addEventListener("click", () => {
-                const keyboardEvent = new KeyboardEvent("keydown", {
-                    key: "r",
-                    code: "KeyR",
-                    keyCode: 82,
-                    which: 82,
-                    bubbles: true,
-                    cancelable: true
-                });
-
-                // Dispatch it to the document, for global key events
-                document.dispatchEvent(keyboardEvent);
             });
         });
     </script>
