@@ -79,7 +79,7 @@
             // Simulate the "R" keypress when the button is clicked
             const reloadButton = document.getElementById("reload-button");
             reloadButton.addEventListener("click", () => {
-                // Create and dispatch the "R" keypress event
+                // Create and dispatch the "R" keypress event to the player
                 const event = new KeyboardEvent("keydown", {
                     key: "r",
                     code: "KeyR",
@@ -89,7 +89,7 @@
                     cancelable: true
                 });
 
-                document.dispatchEvent(event);
+                player.dispatchEvent(event);
             });
         });
     </script>
