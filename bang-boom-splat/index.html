@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game2222</title>
+    <title>Game</title>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         html, body {
@@ -31,20 +31,6 @@
             outline: none; /* Ensure it can be focused */
         }
 
-        @media (max-width: 1170px) {
-            #game-container {
-                transform: scale(1);
-            }
-        }
-
-        @media (min-width: 1170px) and (min-height: 955px) {
-            #game-container {
-                transform: scale(
-                    calc(min(100vw / 1170, 100vh / 955))
-                );
-            }
-        }
-
         #reload-button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -62,7 +48,7 @@
     </style>
 </head>
 <body>
-    <div id="game-container" tabindex="0"></div> <!-- Added tabindex for focusing -->
+    <div id="game-container" tabindex="0"></div>
     <button id="reload-button">R</button>
 
     <script>
@@ -70,20 +56,19 @@
         window.addEventListener("DOMContentLoaded", () => {
             const ruffle = window.RufflePlayer.newest();
             const player = ruffle.createPlayer();
-
             const gameContainer = document.getElementById("game-container");
             gameContainer.appendChild(player);
 
-            // Replace the URL with the path to your SWF file
-            player.load("swf/Bang, Boom, Splat!.swf");
+            // Load the SWF game
+            player.load("https://flashu.xyz/bang-boom-splat/swf/Bang, Boom, Splat!.swf");
 
-            // Focus the game container to ensure it receives key events
+            // Ensure the game container is focused and accepts key events
             gameContainer.focus();
 
-            // Listen for the "R" key press event
+            // Listen for the "R" key press event (on the document)
             window.addEventListener("keydown", (event) => {
                 if (event.key === "r" || event.key === "R") {
-                    // Try to dispatch the event directly to the game
+                    // Dispatch the "R" key event to the SWF player via the document
                     const keyboardEvent = new KeyboardEvent("keydown", {
                         key: "r",
                         code: "KeyR",
@@ -93,8 +78,7 @@
                         cancelable: true
                     });
 
-                    // Dispatch it to the game container directly
-                    gameContainer.dispatchEvent(keyboardEvent);
+                    document.dispatchEvent(keyboardEvent);
                 }
             });
 
@@ -111,8 +95,8 @@
                     cancelable: true
                 });
 
-                // Dispatch it directly to the game container
-                gameContainer.dispatchEvent(keyboardEvent);
+                // Dispatch it directly to the document
+                document.dispatchEvent(keyboardEvent);
             });
         });
     </script>
