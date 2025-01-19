@@ -25,6 +25,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            transform-origin: center center; /* Scale from the center */
+        }
+
+        /* This will scale the game container based on viewport size */
+        @media (max-width: 1170px) {
+            #game-container {
+                transform: scale(1);
+            }
+        }
+
+        @media (min-width: 1170px) and (min-height: 955px) {
+            #game-container {
+                transform: scale(
+                    calc(min(100vw / 1170, 100vh / 955))
+                );
+            }
         }
     </style>
 </head>
