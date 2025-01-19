@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dawg</title>
+    <title>bang boom splat</title></title>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         html, body {
@@ -62,13 +62,13 @@
             // Load the SWF game
             player.load("https://flashu.xyz/bang-boom-splat/swf/Bang, Boom, Splat!.swf");
 
-            // Ensure the game container is focused and accepts key events
+            // Focus on the SWF player container for receiving key events
             gameContainer.focus();
 
-            // Listen for the "R" key press event (on the document)
+            // Try to simulate the "R" key press
             window.addEventListener("keydown", (event) => {
                 if (event.key === "r" || event.key === "R") {
-                    // Dispatch the "R" key event to the SWF player via the document
+                    // Directly trigger the "R" key event to the SWF game (still dispatching to the whole document)
                     const keyboardEvent = new KeyboardEvent("keydown", {
                         key: "r",
                         code: "KeyR",
@@ -78,14 +78,14 @@
                         cancelable: true
                     });
 
+                    // Try to dispatch to the document
                     document.dispatchEvent(keyboardEvent);
                 }
             });
 
-            // Simulate the "R" key press when the button is clicked
+            // When button is clicked, simulate the key press
             const reloadButton = document.getElementById("reload-button");
             reloadButton.addEventListener("click", () => {
-                // Trigger the "R" key event manually when the button is clicked
                 const keyboardEvent = new KeyboardEvent("keydown", {
                     key: "r",
                     code: "KeyR",
@@ -95,7 +95,7 @@
                     cancelable: true
                 });
 
-                // Dispatch it directly to the document
+                // Dispatch it to the document, for global key events
                 document.dispatchEvent(keyboardEvent);
             });
         });
