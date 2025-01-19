@@ -83,7 +83,7 @@
             // Listen for the "R" key press event
             window.addEventListener("keydown", (event) => {
                 if (event.key === "r" || event.key === "R") {
-                    // Dispatch key event to the SWF player
+                    // Try to dispatch the event directly to the game
                     const keyboardEvent = new KeyboardEvent("keydown", {
                         key: "r",
                         code: "KeyR",
@@ -93,11 +93,12 @@
                         cancelable: true
                     });
 
+                    // Dispatch it to the game container directly
                     gameContainer.dispatchEvent(keyboardEvent);
                 }
             });
 
-            // Optional: Button to simulate the "R" key press when clicked
+            // Simulate the "R" key press when the button is clicked
             const reloadButton = document.getElementById("reload-button");
             reloadButton.addEventListener("click", () => {
                 // Trigger the "R" key event manually when the button is clicked
@@ -110,6 +111,7 @@
                     cancelable: true
                 });
 
+                // Dispatch it directly to the game container
                 gameContainer.dispatchEvent(keyboardEvent);
             });
         });
