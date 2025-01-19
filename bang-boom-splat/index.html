@@ -20,29 +20,11 @@
 
         #game-container {
             background-color: black;
-
-            /* Default 4:3 landscape orientation */
-            width: 100%;
-            height: auto;
-            aspect-ratio: 4 / 3;
-
-            /* Ensure it fits within the screen */
-            max-width: 100vw;
-            max-height: calc(100vw * 3 / 4);
-        }
-
-        @media (orientation: portrait) {
-            #game-container {
-                /* Adjust for portrait by limiting height */
-                height: 100vh;
-                width: calc(100vh * 4 / 3);
-            }
-        }
-
-        canvas {
-            display: block;
-            width: 100%;
-            height: 100%;
+            width: 1170px; /* Fixed width */
+            height: 955px; /* Fixed height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
